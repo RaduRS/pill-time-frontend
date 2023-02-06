@@ -100,38 +100,42 @@ const Reminder = () => {
           <div class="shadow"></div>
         </div>
       )}
-      <Row>
-        {reminders
-          .reduce((acc, reminder, index) => {
-            if (index % 2 === 0) {
-              acc.push([reminder]);
-            } else {
-              acc[acc.length - 1].push(reminder);
-            }
-            return acc;
-          }, [])
-          .map((group, index) => (
-            <Row className="group" col={6} key={index}>
-              <h2>{groupNames[index]}</h2>
-              {group.map((reminder, i) => (
-                <EveryDay
-                  name={reminderNames[i]}
-                  reminder={reminder}
-                  id={reminders._id}
-                  key={reminder._id}
-                  className={reminderNames[i] === "AM" ? "am-only" : ""}
-                  setToComplete={setToComplete}
-                  setToIncomplete={setToIncomplete}
-                />
+      {!isLoading && (
+        <div>
+          <Row>
+            {reminders
+              .reduce((acc, reminder, index) => {
+                if (index % 2 === 0) {
+                  acc.push([reminder]);
+                } else {
+                  acc[acc.length - 1].push(reminder);
+                }
+                return acc;
+              }, [])
+              .map((group, index) => (
+                <Row className="group" col={6} key={index}>
+                  <h2>{groupNames[index]}</h2>
+                  {group.map((reminder, i) => (
+                    <EveryDay
+                      name={reminderNames[i]}
+                      reminder={reminder}
+                      id={reminders._id}
+                      key={reminder._id}
+                      className={reminderNames[i] === "AM" ? "am-only" : ""}
+                      setToComplete={setToComplete}
+                      setToIncomplete={setToIncomplete}
+                    />
+                  ))}
+                </Row>
               ))}
-            </Row>
-          ))}
-      </Row>
-      <Container className="button">
-        <button className="button-74" onClick={resetButton}>
-          Reset ALL
-        </button>
-      </Container>
+          </Row>
+          <Container className="button">
+            <button className="button-74" onClick={resetButton}>
+              Reset ALL
+            </button>
+          </Container>
+        </div>
+      )}
     </Container>
   );
 };

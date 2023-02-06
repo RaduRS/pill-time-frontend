@@ -16,7 +16,6 @@ const EveryDay = ({
   const checkbox = useRef();
 
   const handleClick = () => {
-    console.log(checkbox);
     if (checkbox.current.checked) {
       setToComplete(reminder);
     } else {
