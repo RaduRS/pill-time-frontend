@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Patua+One&display=swap");
+
+html,
+body {
+  background-color: #343434;
+}
+
+.button-74 {
+  background-color: #fbeee0;
+  border: 3px solid #111;
+  border-radius: 8px;
+  box-shadow: #111 6px 6px 0 0;
+  color: #111;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0 auto;
+  min-width: 170px;
+}
+
+.button-74:hover {
+  background-color: #fff;
+  transform: translate(0px, 0px);
+  box-shadow: #111 0px 0px 0 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-74:active {
+  box-shadow: #111 3px 3px 0 0;
+  transform: translate(2px, 2px);
+  transition: all 0.2s ease-out;
+}
+
+.button {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.row,
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+.container img {
+  height: 95px;
+  display: block;
+  margin: 2rem auto;
+}
+
+.group {
+  /* background-color: #cdf5f5; */
+  margin: 1rem;
+  width: 25%;
+}
+
+.title {
+  font-family: "Handlee", cursive;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.am-only {
+  position: relative;
+  background-color: #e3d7a4 !important;
+  box-shadow: 2px 0px 0px 0px #b1b1b1;
+  border-radius: 0px 0px 0px 8px !important;
+}
+
+/* checkbox-rect */
+
+.checkbox-rect {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox-rect input[type="checkbox"] {
+  display: none;
+}
+.checkbox-rect input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  font: 16px/20px "Open Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+/* .checkbox-rect input[type="checkbox"] + label:last-child {
+  margin-bottom: 0;
+} */
+.checkbox-rect input[type="checkbox"] + label:before {
+  content: "";
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 1px solid #343a3f;
+  border-radius: 0.2em;
+  position: relative;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+  transition: all 0.2s, background 0.2s ease-in-out;
+  background: #f3f3f3;
+}
+.checkbox-rect input[type="checkbox"]:checked + label:before {
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 0.2em;
+  border: 2px solid #fff;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  background: #50565a;
+  box-shadow: 0 0 0 1px #000;
+}
+/* checkbox-rect end */
+
+.am-and-pm {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 16px;
+  background-color: #a4c4e3;
+  padding: 0px !important;
+  font-family: "Patua One", cursive;
+  border-radius: 0px 0px 8px 0px;
+}
+
+.card {
+  background: none !important;
+  border: none !important;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 10px !important;
+  margin-bottom: 0px !important;
+  /* border-bottom: 1px solid #000; */
+  box-shadow: 0px 2px 0px 0px #c9c9c9;
+  padding-bottom: 8px;
+  z-index: 2;
+  background-color: #cdf6e8 !important;
+  font-family: "Handlee", cursive;
+  font-size: 1.6rem;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.card-title {
+  font-size: 18px !important;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .group {
+    width: 45%;
+  }
+  .card-title {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .group {
+    width: 90%;
+  }
+}
+
+@media (max-width: 325px) {
+  .title {
+    font-size: 1.3rem;
+  }
+}
