@@ -17,6 +17,7 @@ const Reminder = () => {
   });
   const [reminders, setReminders] = useState([]);
   const [completed, setCompleted] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { name } = formData;
 
@@ -26,11 +27,14 @@ const Reminder = () => {
   };
 
   const getReminders = async () => {
+    setIsLoading(true);
     try {
       const { data } = await axios.get(`${URL}/api`);
       setReminders(data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
+      setIsLoading(false);
     }
   };
 
@@ -86,6 +90,16 @@ const Reminder = () => {
     <Container>
       <img src={logo} alt="" />
       <h1 className="title">Have you taken your medicine yet?</h1>
+      {isLoading && (
+        <div className="wrapper">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+        </div>
+      )}
       <Row>
         {reminders
           .reduce((acc, reminder, index) => {
